@@ -1,20 +1,48 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://blog.angular.io//">Angular blog</a></h2>
-  </li>
-</ul>
 
+    <div class="info">
+      <br>
+    <h4>Segwit P2SH(P2WPKH) address sign verify message tool</h4>
+ 
+    <p>
+      Most segwit wallets use a backwards compatible P2SH(P2WPKH) address i.e. native segwit address wrapped in a P2SH address. The issue is this generated P2SH address has no corresponding private key and therefore won't work in regular Bitcoin Message/Sign verify applications. 
+      This tool will generate P2SH(P2WPKH), P2WPKH and legacy P2PKH addresses from a given WIF and sign a message using the private key.
+      Using your now known P2WPKH or P2PKH address you can send it to a another party along with the signature who can use this tool to verify the signature and that your claimed P2SH(P2WPKH) derived from same private key as your P2WPKH or P2PKH address.
+    </p>
+    </div>
+     <div class="sign">
+    <h3>Sign</h3>
+    <p class="disclaimer">
+      DISCLAIMER: Do not trust this web app with your valuable WIFs!
+    </p>
+          <input   type="password" class="form-control" placeholder="enter wif"  [(ngModel)]="wif"  aria-describedby="basic-addon1">
+           <input    class="form-control" placeholder="enter message"  [(ngModel)]="message"  aria-describedby="basic-addon1">
+           
+          
+          <button   type="button" id="checkButton" class="btn btn-secondary" (click)="sign()">Sign</button>
+          <br>
+          <input    class="form-control" placeholder="signature"  [(ngModel)]="signature"  aria-describedby="basic-addon1">
+          
+          <div class="addresses">
+          <label >Your P2PKH address: {{p2pkhAddress}}</label>
+           
+          <label >Your P2WPKH address: {{p2wpkhAddress}}</label>
+           
+           <label >Your P2SH(P2WPKH) address: {{p2sh_p2wpkhAddress}}</label>
+         </div>
+</div>
+<div class="verify">
+ <h3>Verify</h3>
+   <input  type="test" class="form-control" placeholder="enter address"  [(ngModel)]="addressVerify"  aria-describedby="basic-addon1">
+
+            <input  type="test" class="form-control" placeholder="enter message"  [(ngModel)]="messageVerify"  aria-describedby="basic-addon1">
+           <input  type="test" class="form-control" placeholder="enter signature"  [(ngModel)]="signatureVerify"  aria-describedby="basic-addon1">
+           
+          
+          <button   type="button" id="checkButton" class="btn btn-secondary" (click)="verify()">Verify</button>
+
+          <br>
+          <h4>{{resultVerify}}</h4>
+           <div>Derived P2SH(P2WPKH) address: {{p2sh_p2wpkhAddressVerify}}</div>
+           
+    
+    </div>
