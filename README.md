@@ -1,4 +1,4 @@
-# Pshsegwitverify
+# Segwit P2SH(P2WPKH) sign verify
 
 ## Segwit P2SH(P2WPKH) address sign verify message tool 
 
