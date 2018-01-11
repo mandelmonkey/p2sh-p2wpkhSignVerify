@@ -1,5 +1,14 @@
 # Pshsegwitverify
 
+## Segwit P2SH(P2WPKH) address sign verify message tool 
+
+  Most segwit wallets use a backwards compatible P2SH(P2WPKH) address i.e. native segwit address wrapped in a P2SH address. The issue is this generated P2SH address has no corresponding private key and therefore won't work in regular Bitcoin Message/Sign verify applications. 
+  This tool will generate P2SH(P2WPKH), P2WPKH and legacy P2PKH addresses from a given WIF and sign a message using the private key.
+  Using your now known P2WPKH or P2PKH address you can send it to a another party along with the signature who can use this tool to verify the signature and that your claimed P2SH(P2WPKH) derived from same private key as your P2WPKH or P2PKH address.
+
+  demo can be found here https://p2sh-p2wpkh-sign-verify.herokuapp.com/
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.
 
 ## Development server
