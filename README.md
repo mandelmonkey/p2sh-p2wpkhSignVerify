@@ -1,3 +1,7 @@
+
+THIS REPO IS DEPRECATED AS IT CAME TO MY ATTENTION THAT YOU CAN VERIFY A SIMPLER WAY AS OUTLINED in 
+https://github.com/bitcoinjs/bitcoinjs-message/blob/addSegwit/index.js
+
 # Segwit P2SH(P2WPKH) sign verify
 
 ## Segwit P2SH(P2WPKH) address sign verify message tool 
